@@ -11,11 +11,20 @@ package pingpong;
  */
 public class Pingpong {
 
-    /**
-     * @param args the command line arguments
-     */
+     public static final int MAX_TURNS = 10;
+
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Player player1 = new Player("ping");
+        Player player2 = new Player("pong");
+
+        player1.setNextPlayer(player2);
+        player2.setNextPlayer(player1);
+
+        System.out.println("Game starting...!");
+
+        player1.play();
+
+        System.out.println("Game finished!");
     }
-    
 }
